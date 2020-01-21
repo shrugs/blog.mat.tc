@@ -4,12 +4,25 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
-    navigation: [
+    siteTitle: `blog.mat.tc`,
+    siteTitleAlt: 'blog.mat.tc',
+    siteHeadline: `Minimal Blog - Gatsby Theme from @lekoarts`,
+    siteUrl: `https://blog.mat.tc`,
+    siteDescription: `blog.mat.tc`,
+    siteLanguage: `en`,
+    siteImage: '/banner.jpg',
+    basePath: '/',
+    blogPath: '/blog',
+    showLineNumbers:  true,
+    tagsPath: '/tags',
+    author: `@fuck`,
+    externalLinks: [
       {
-        title: `Blog`,
-        slug: `/blog`,
+        name: `Twitter`,
+        url: `https://twitter.com/mattgcondon`,
       },
+    ],
+    navigation: [
       {
         title: `About`,
         slug: `/about`,
@@ -31,9 +44,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `blog.mat.tc`,
+        short_name: `blog.mat.tc`,
+        description: `blog.mat.tc`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
@@ -53,7 +66,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
 }
