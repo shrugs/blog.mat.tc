@@ -1,6 +1,11 @@
+const sharp = require('sharp');
 require(`dotenv`).config({
   path: `.env`,
 })
+
+
+sharp.cache(false);
+sharp.simd(false);
 
 module.exports = {
   siteMetadata: {
