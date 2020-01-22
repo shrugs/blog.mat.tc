@@ -26,6 +26,10 @@ module.exports = {
         name: `Twitter`,
         url: `https://twitter.com/mattgcondon`,
       },
+      {
+        name: `Homepage`,
+        url: `https://mat.tc`,
+      },
     ],
     navigation: [
       {
