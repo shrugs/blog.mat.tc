@@ -1,4 +1,4 @@
 - [ ] remove /blog
 - [x] make sure plugins are included correctly
-- [ ] make sure dns resolves
-- [ ] setup now for github
+- [x] make sure dns resolves
+- [x] setup now for github
