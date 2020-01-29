@@ -11,7 +11,14 @@ here it is, in all it's straightforward glory
 
 ```ts
 // via https://blog.mat.tc/next-js-use-query-params
-function useQueryParams(): [Record<string, string>, (value: Record<string, string>) => void] {
+import { useRouter } from 'next/router';
+import Router from 'next/router';
+import { useState, useCallback, useEffect } from 'react';
+
+export default function useQueryParams(): [
+  Record<string, string>,
+  (value: Record<string, string>) => void,
+] {
   const router = useRouter();
 
   const [query, _setQuery] = useState(() => router.query as Record<string, string>);
@@ -24,6 +31,17 @@ function useQueryParams(): [Record<string, string>, (value: Record<string, strin
     },
     [router],
   );
+
+  useEffect(() => {
+    const routeChangeComplete = (url: string) => {
+      _setQuery(Router.query as Record<string, string>);
+    };
+
+    Router.events.on('routeChangeComplete', routeChangeComplete);
+    return () => {
+      Router.events.off('routeChangeComplete', routeChangeComplete);
+    };
+  }, []);
 
   return [query, setQuery];
 }
